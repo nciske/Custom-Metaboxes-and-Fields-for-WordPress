@@ -62,7 +62,7 @@ function cmb_sample_metaboxes( array $meta_boxes ) {
 				'name' => 'Test Date/Time Picker Combo (UNIX timestamp)',
 				'desc' => 'field description (optional)',
 				'id'   => $prefix . 'test_datetime_timestamp',
-				'type' => 'text_datetime',
+				'type' => 'text_datetime_timestamp',
 			),
 			array(
 	            'name' => 'Test Time',
@@ -153,6 +153,13 @@ function cmb_sample_metaboxes( array $meta_boxes ) {
 				'id'       => $prefix . 'text_taxonomy_select',
 				'type'     => 'taxonomy_select',
 				'taxonomy' => '', // Taxonomy Slug
+			),
+			array(
+				'name'		=> 'Test Taxonomy Multi Checkbox',
+				'desc'		=> 'field description (optional)',
+				'id'		=> $prefix . 'test_multitaxonomy',
+				'type'		=> 'taxonomy_multicheck',
+				'taxonomy'	=> '', // Taxonomy Slug
 			),
 			array(
 				'name' => 'Test Checkbox',
