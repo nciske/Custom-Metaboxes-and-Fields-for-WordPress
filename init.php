@@ -181,7 +181,9 @@ class cmb_Meta_Box {
 			if ( 'file' == $field['type'] && !isset( $field['save_id'] ) )  $field['save_id']  = false;
 			if ( 'multicheck' == $field['type'] ) $field['multiple'] = true;  
 						
-			$meta = get_post_meta( $post->ID, $field['id'], 'multicheck' != $field['type'] /* If multicheck this can be multiple values */ );
+			$pmeta = get_post_meta( $post->ID, $field['id'], 'multicheck' != $field['type'] /* If multicheck this can be multiple values */ );
+
+			$meta = apply_filters( 'cmb_get_post_meta', $pmeta, $post->ID, $field['id'], 'multicheck' != $field['type'] );
 
 			echo '<tr>';
 	
